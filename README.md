@@ -5,6 +5,13 @@
 ```shell
 git clone git@github.com:boyur/aviasales-test.git
 cd aviasales-test
-npm i
-npm run start
+npm install
+npm start
+```
+
+## Deploy
+Deploy on github-pages
+
+```shell
+npm run deploy
 ```
