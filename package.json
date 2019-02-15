@@ -1,0 +1,62 @@
+{
+  "name": "aviasales-test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "lint:js": "eslint src --ext .js,.jsx",
+    "lint:scss": "stylelint 'src/**/*.scss'",
+    "lint": "npm run lint:js && npm run lint:scss",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "node-sass": "^4.11.0",
+    "normalize.css": "8.0.1",
+    "react": "16.8.2",
+    "react-dom": "16.8.2",
+    "react-scripts": "2.1.5"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "7.12.4",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0"
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "plugins": [
+      "import",
+      "react"
+    ],
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true,
+      "jest": true
+    },
+    "parser": "babel-eslint",
+    "rules": {
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ]
+    }
+  },
+  "browserslist": [
+    "last 2 version",
+    ">0.2%",
+    "not dead",
+    "not ie < 10",
+    "not op_mini all"
+  ]
+}
