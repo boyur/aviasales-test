@@ -36,6 +36,10 @@ class App extends PureComponent {
       .catch(error => console.log(error.message));
   }
 
+  handleChangeCurrency = (currency) => {
+    this.setState({ currency });
+  };
+
   render() {
     const { tickets, currency, exchangeRates } = this.state;
 
@@ -51,7 +55,10 @@ class App extends PureComponent {
           {
             tickets ? (
               <>
-                <SettingsPanel />
+                <SettingsPanel
+                  currency={currency}
+                  handleChangeCurrency={this.handleChangeCurrency}
+                />
                 <TicketsList tickets={convertedTickets} />
               </>
             ) : 'Loading...'
