@@ -18,7 +18,7 @@ class App extends PureComponent {
         const sortedTickets = tickets.sort((a, b) => a.price - b.price);
 
         this.setState({
-          tickets: sortedTickets
+          tickets: sortedTickets,
         });
       })
       .catch(error => console.log(error.message));

@@ -2,36 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Route.scss';
 
-import airplane from 'assets/svg/airplane.svg';
+import MainSection from './MainSection';
+import TimeSection from './TimeSection';
 
 const Route = (props) => {
   const {
-    origin_name,
-    destination_name,
     arrival_time,
     departure_time,
     stops,
+    ...otherProps
   } = props;
 
   return (
     <div className="route">
-      <div className="route__time-section">
-        <div className="route__time">
-          {arrival_time}
-        </div>
-        <div className="route__path">
-          {stops ? `${stops} пересадки` : null}
-          <img
-            className="route__path-airplane"
-            src={airplane}
-            alt="airplane"
-          />
-        </div>
-        <div className="route__time">
-          {departure_time}
-        </div>
-      </div>
-      <div>{`${origin_name} - ${destination_name}`}</div>
+      <TimeSection
+        arrival_time={arrival_time}
+        departure_time={departure_time}
+        stops={stops}
+      />
+      <MainSection {...otherProps} />
     </div>
   );
 };

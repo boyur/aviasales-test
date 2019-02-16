@@ -4,9 +4,8 @@
 
 .route__time-section {
   display: flex;
-  position: relative;
-  justify-content: space-between;
   width: 100%;
+  justify-content: space-between;
   margin-bottom: 10px;
 }
 
@@ -39,4 +38,32 @@
   bottom: -6px;
   right: -2px;
   width: 13px;
+}
+
+.route__main-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  font-size: 12px;
+}
+
+.route__city {
+  line-height: 1.5;
+  color: #4a4a4a;
+  font-weight: 600;
+}
+
+.route__date {
+  line-height: 1.5;
+  font-weight: normal;
+  color: #8b9497;
+}
+
+.route__origin {
+  text-align: left;
+}
+
+.route__destination {
+  text-align: right;
 }
