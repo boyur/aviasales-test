@@ -8,7 +8,7 @@ const TimeSection = (props) => {
   return (
     <div className="route__time-section">
       <div className="route__time">
-        {arrival_time}
+        {departure_time}
       </div>
       <div className="route__path">
         {stops ? `${stops} пересадки` : null}
@@ -19,7 +19,7 @@ const TimeSection = (props) => {
         />
       </div>
       <div className="route__time">
-        {departure_time}
+        {arrival_time}
       </div>
     </div>
   );
