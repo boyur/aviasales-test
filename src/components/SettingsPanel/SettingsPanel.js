@@ -3,7 +3,9 @@ import './SettingsPanel.scss';
 
 const SettingsPanel = () => (
   <div className="settings-panel">
-    SettingsPanel
+    <div className="settings-panel__container">
+      SettingsPanel
+    </div>
   </div>
 );
 
