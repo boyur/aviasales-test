@@ -1,0 +1,42 @@
+.route {
+  width: 100%;
+}
+
+.route__time-section {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.route__time {
+  font-size: 32px;
+  line-height: 26px;
+  color: #4a4a4a;
+}
+
+.route__path {
+  position: relative;
+  width: 100px;
+  height: 18px;
+  font-size: 10px;
+  color: #8b9497;
+  text-align: center;
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 12px;
+    content: '';
+    border-bottom: 1px solid #d2d5d6;
+  }
+}
+
+.route__path-airplane {
+  position: absolute;
+  bottom: -6px;
+  right: -2px;
+  width: 13px;
+}

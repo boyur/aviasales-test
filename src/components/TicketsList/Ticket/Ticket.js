@@ -5,11 +5,10 @@ import carriersConfig from 'configs/carriers';
 import './Ticket.scss';
 
 import BuyButton from './BuyButton';
+import Route from './Route';
 
-const Ticket = (props) => {
-  const {
-    price, origin_name, carrier, destination_name,
-  } = props;
+const Ticket = ({ ticket }) => {
+  const { price, carrier, ...route } = ticket;
 
   return (
     <div className="ticket">
@@ -22,17 +21,26 @@ const Ticket = (props) => {
         <BuyButton price={price} />
       </div>
       <div className="ticket__right-column">
-        <div>{`${origin_name} - ${destination_name}`}</div>
+        <Route {...route} />
       </div>
     </div>
   );
 };
 
 Ticket.propTypes = {
-  origin_name: PropTypes.string.isRequired,
-  destination_name: PropTypes.string.isRequired,
-  carrier: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  ticket: PropTypes.shape({
+    origin: PropTypes.string,
+    origin_name: PropTypes.string,
+    destination: PropTypes.string,
+    destination_name: PropTypes.string,
+    departure_date: PropTypes.string,
+    departure_time: PropTypes.string,
+    arrival_date: PropTypes.string,
+    arrival_time: PropTypes.string,
+    carrier: PropTypes.string,
+    stops: PropTypes.number,
+    price: PropTypes.number,
+  }).isRequired,
 };
 
 export default Ticket;
