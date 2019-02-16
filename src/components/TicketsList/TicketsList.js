@@ -8,7 +8,7 @@ import Ticket from './Ticket';
 const TicketsList = ({ tickets }) => (
   <div className="tickets-list">
     {
-      tickets.map((ticket, i) => <Ticket key={i} ticket={ticket} />)
+      tickets.map((ticket, i) => <Ticket key={i} {...ticket} />)
     }
   </div>
 );

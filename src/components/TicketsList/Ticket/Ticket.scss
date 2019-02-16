@@ -1,10 +1,23 @@
 .ticket {
+  display: flex;
   width: 100%;
-  padding: 15px;
   margin-bottom: 20px;
   border-radius: 5px;
 
   box-shadow: 0 1px 4px 0 rgba(91, 137, 164, 0.25);
   background-color: #fff;
   box-sizing: border-box;
+}
+
+.ticket__left-column {
+  width: 200px;
+  padding: 15px;
+  text-align: center;
+  border-right: 1px solid #f3f7fa;
+
+}
+
+.ticket__right-column {
+  width: 100%;
+  padding: 15px;
 }
