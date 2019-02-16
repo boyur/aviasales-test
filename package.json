@@ -33,10 +33,8 @@
   },
   "browserslist": [
     "last 2 version",
-    ">0.2%",
-    "not ie < 10",
-    "not dead",
-    "not op_mini all"
+    ">1%",
+    "not ie < 11"
   ],
   "homepage": "http://boyur.github.io/aviasales-test"
 }
