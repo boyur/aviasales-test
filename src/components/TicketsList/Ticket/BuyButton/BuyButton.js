@@ -5,12 +5,12 @@ import './BuyButton.scss';
 const BuyButton = ({ price, text }) => (
   <button className="buy-button" type="button">
     <div>{text}</div>
-    <div>{`за ${price} ₽`}</div>
+    <div>{`за ${price}`}</div>
   </button>
 );
 
 BuyButton.propTypes = {
-  price: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
   text: PropTypes.string,
 };
 

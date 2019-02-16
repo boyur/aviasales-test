@@ -39,7 +39,7 @@ Ticket.propTypes = {
     arrival_time: PropTypes.string,
     carrier: PropTypes.string,
     stops: PropTypes.number,
-    price: PropTypes.number,
+    price: PropTypes.string,
   }).isRequired,
 };
 

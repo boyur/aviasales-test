@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import urls from 'configs/urls';
+import { formatPrice } from 'utils/currencies';
 import './App.scss';
 
 import Header from 'components/Header';
@@ -9,6 +10,8 @@ import TicketsList from 'components/TicketsList';
 class App extends PureComponent {
   state = {
     tickets: null,
+    exchangeRates: null,
+    currency: 'RUB',
   };
 
   componentDidMount() {
@@ -22,10 +25,24 @@ class App extends PureComponent {
         });
       })
       .catch(error => console.log(error.message));
+
+    fetch(urls.exchangeRates)
+      .then(response => response.json())
+      .then(({ quotes }) => {
+        this.setState({
+          exchangeRates: quotes,
+        });
+      })
+      .catch(error => console.log(error.message));
   }
 
   render() {
-    const { tickets } = this.state;
+    const { tickets, currency, exchangeRates } = this.state;
+
+    const convertedTickets = tickets && tickets.map(item => ({
+      ...item,
+      price: formatPrice(item.price, currency, exchangeRates),
+    }));
 
     return (
       <>
@@ -35,7 +52,7 @@ class App extends PureComponent {
             tickets ? (
               <>
                 <SettingsPanel />
-                <TicketsList tickets={tickets} />
+                <TicketsList tickets={convertedTickets} />
               </>
             ) : 'Loading...'
           }
