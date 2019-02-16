@@ -1,4 +1,5 @@
 export const convertCurrency = (price, currency, exchangeRates) => {
+  console.log(exchangeRates);
   if (!exchangeRates) {
     switch (currency) {
       case 'RUB': return price;
@@ -10,8 +11,8 @@ export const convertCurrency = (price, currency, exchangeRates) => {
 
   switch (currency) {
     case 'RUB': return price;
-    case 'USD': return price / exchangeRates.USDRUB;
-    case 'EUR': return (price / exchangeRates.USDRUB) * exchangeRates.USDEUR;
+    case 'USD': return price / exchangeRates.RUB;
+    case 'EUR': return (price / exchangeRates.RUB) * exchangeRates.EUR;
     default: return price;
   }
 };

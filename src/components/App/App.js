@@ -28,9 +28,9 @@ class App extends PureComponent {
 
     fetch(urls.exchangeRates)
       .then(response => response.json())
-      .then(({ quotes }) => {
+      .then(({ rates }) => {
         this.setState({
-          exchangeRates: quotes,
+          exchangeRates: rates,
         });
       })
       .catch(error => console.log(error.message));
