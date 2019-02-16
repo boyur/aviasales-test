@@ -6,7 +6,7 @@ import './Ticket.scss';
 const Ticket = ({ ticket }) => (
   <div className="ticket">
     <div>{ticket.price}</div>
-    <div>{ticket.origin_name} - {ticket.destination_name}</div>
+    <div>{`${ticket.origin_name} - ${ticket.destination_name}`}</div>
   </div>
 );
 
@@ -22,7 +22,7 @@ Ticket.propTypes = {
     arrival_time: PropTypes.string,
     carrier: PropTypes.string,
     stops: PropTypes.number,
-    price: PropTypes.number
+    price: PropTypes.number,
   }).isRequired,
 };
 
