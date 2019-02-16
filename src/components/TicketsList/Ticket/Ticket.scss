@@ -11,7 +11,7 @@
 
 .ticket__left-column {
   width: 200px;
-  padding: 15px;
+  padding: 23px 20px;
   text-align: center;
   border-right: 1px solid #f3f7fa;
   box-sizing: border-box;
@@ -22,4 +22,8 @@
   max-width: 365px;
   padding: 15px;
   box-sizing: border-box;
+}
+
+.ticket__carrier-img {
+  width: 120px;
 }

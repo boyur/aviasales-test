@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_PATH=src react-scripts start",
+    "build": "NODE_PATH=src react-scripts build",
+    "eject": "NODE_PATH=src react-scripts eject",
     "lint:js": "eslint src --ext .js,.jsx",
     "lint:scss": "stylelint 'src/**/*.scss'",
     "lint": "npm run lint:js && npm run lint:scss",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -30,33 +30,6 @@
     "gh-pages": "^2.0.1",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0"
-  },
-  "eslintConfig": {
-    "extends": "airbnb",
-    "plugins": [
-      "import",
-      "react"
-    ],
-    "env": {
-      "es6": true,
-      "browser": true,
-      "node": true,
-      "jest": true
-    },
-    "parser": "babel-eslint",
-    "rules": {
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ],
-      "react/no-array-index-key": 0,
-      "camelcase": 0
-    }
   },
   "browserslist": [
     "last 2 version",

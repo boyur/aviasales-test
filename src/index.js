@@ -1,7 +1,5 @@
 // polyfill for IE
 import 'react-app-polyfill/ie9';
-import 'core-js/es6/map';
-import 'core-js/es6/set';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -9,7 +7,7 @@ import ReactDOM from 'react-dom';
 import 'normalize.css/normalize.css';
 import './index.scss';
 
-import App from './components/App';
+import App from 'components/App';
 
 import * as serviceWorker from './serviceWorker';
 
