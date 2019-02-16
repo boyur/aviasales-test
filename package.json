@@ -17,7 +17,7 @@
     "normalize.css": "8.0.1",
     "prop-types": "15.7.2",
     "react": "16.8.2",
-    "react-app-polyfill": "^0.2.1",
+    "react-app-polyfill": "0.2.1",
     "react-dom": "16.8.2",
     "react-scripts": "2.1.5"
   },
@@ -61,8 +61,8 @@
   "browserslist": [
     "last 2 version",
     ">0.2%",
-    "not dead",
     "not ie < 10",
+    "not dead",
     "not op_mini all"
   ],
   "homepage": "http://boyur.github.io/aviasales-test"

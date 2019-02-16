@@ -1,6 +1,10 @@
+// polyfill for IE
+import 'react-app-polyfill/ie9';
+import 'core-js/es6/map';
+import 'core-js/es6/set';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'react-app-polyfill/ie11';
 
 import 'normalize.css/normalize.css';
 import './index.scss';
