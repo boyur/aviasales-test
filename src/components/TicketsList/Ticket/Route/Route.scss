@@ -27,7 +27,7 @@
 
 .route__path {
   position: relative;
-  width: 100%;
+  width: 110px;
   height: 18px;
   font-size: 10px;
   color: #8b9497;
@@ -42,6 +42,10 @@
     right: 12px;
     content: '';
     border-bottom: 1px solid #d2d5d6;
+  }
+
+  @media (max-width: 860px) {
+    width: 100%;
   }
 }
 

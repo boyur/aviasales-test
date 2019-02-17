@@ -1,6 +1,9 @@
-// polyfill for IE
+// polyfill for IE 11
 import 'react-app-polyfill/ie11';
 import 'array-findindex-polyfill';
+// polyfill for IE 10
+import 'core-js/es6/map';
+import 'core-js/es6/set';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
