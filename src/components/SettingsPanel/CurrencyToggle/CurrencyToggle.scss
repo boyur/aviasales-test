@@ -4,12 +4,12 @@
   justify-content: space-between;
   width: 100%;
   height: 40px;
-  padding: 0 15px;
-  font-weight: 600;
-  color: #2196f3;
   letter-spacing: 0.5px;
   box-sizing: border-box;
-  margin-bottom: 15px;
+}
+
+.currency-toggle__wrapper {
+  margin: 5px 15px 16px 15px;
 }
 
 .currency-toggle__button {
@@ -19,6 +19,11 @@
   text-align: center;
   box-sizing: border-box;
   cursor: pointer;
+
+  color: #2196f3;
+  font-weight: 600;
+  font-size: 13px;
+
   border: 1px solid #eceff1;
   background-color: transparent;
   transition: 0.3s;

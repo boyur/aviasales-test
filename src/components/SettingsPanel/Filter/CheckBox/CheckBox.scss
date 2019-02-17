@@ -64,11 +64,12 @@
     vertical-align: middle;
     transition: 0.3s;
     cursor: pointer;
+    box-sizing: border-box;
   }
 
   input[type=checkbox]:checked + label::before {
     color: #000;
     border: 1px solid #2196f3;
-    background-size: 12px;
+    background-size: 10px;
   }
 }

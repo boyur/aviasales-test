@@ -17,12 +17,13 @@
 
 .route__path {
   position: relative;
-  width: 100px;
+  width: 110px;
   height: 18px;
   font-size: 10px;
   color: #8b9497;
   text-align: center;
   text-transform: uppercase;
+  margin-top: 2px;
 
   &::after {
     position: absolute;
