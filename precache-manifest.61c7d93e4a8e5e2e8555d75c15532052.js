@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/aviasales-test/static/css/2.28992c60.chunk.css"
   },
   {
-    "revision": "5781badf8829703d3ee84b4b9f2e0d88",
+    "revision": "274518508340426e6766d9468c83f44c",
     "url": "/aviasales-test/index.html"
   }
 ];
