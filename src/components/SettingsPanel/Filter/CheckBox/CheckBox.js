@@ -8,13 +8,9 @@ const CheckBox = (props) => {
     id,
     isChecked,
     onChange,
-    handleChangeFilter,
+    onSetOneFilter,
     label,
   } = props;
-
-  const onClickOnlyButton = () => {
-    handleChangeFilter([parseInt(id, 10)]);
-  };
 
   return (
     <div className="checkbox">
@@ -33,8 +29,9 @@ const CheckBox = (props) => {
       {
         id !== 'all' && (
           <button
+            id={id}
             className="checkbox__only"
-            onClick={onClickOnlyButton}
+            onClick={onSetOneFilter}
             type="button"
           >
             ТОЛЬКО
@@ -49,13 +46,13 @@ CheckBox.propTypes = {
   id: PropTypes.string.isRequired,
   isChecked: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
-  handleChangeFilter: PropTypes.func,
+  onSetOneFilter: PropTypes.func,
   label: PropTypes.string.isRequired,
 };
 
 CheckBox.defaultProps = {
   isChecked: false,
-  handleChangeFilter: () => {},
+  onSetOneFilter: () => {},
 };
 
 export default CheckBox;

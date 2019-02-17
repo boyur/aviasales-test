@@ -11,6 +11,7 @@ const SettingsPanel = (props) => {
     filter,
     handleChangeCurrency,
     handleChangeFilter,
+    onSetOneFilter,
   } = props;
 
   return (
@@ -29,6 +30,7 @@ const SettingsPanel = (props) => {
         <Filter
           filter={filter}
           handleChangeFilter={handleChangeFilter}
+          onSetOneFilter={onSetOneFilter}
         />
       </div>
     </div>
@@ -40,6 +42,7 @@ SettingsPanel.propTypes = {
   filter: PropTypes.arrayOf(PropTypes.number).isRequired,
   handleChangeCurrency: PropTypes.func.isRequired,
   handleChangeFilter: PropTypes.func.isRequired,
+  onSetOneFilter: PropTypes.func.isRequired,
 };
 
 export default SettingsPanel;

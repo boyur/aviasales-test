@@ -45,6 +45,12 @@ class App extends Component {
     this.setState({ filter });
   };
 
+  onSetOneFilter = (e) => {
+    console.log(e);
+    const { id } = e.target;
+    this.setState({ filter: [parseInt(id, 10)] });
+  };
+
   render() {
     const {
       tickets, filter, currency, exchangeRates,
@@ -69,6 +75,7 @@ class App extends Component {
                   filter={filter}
                   handleChangeCurrency={this.handleChangeCurrency}
                   handleChangeFilter={this.handleChangeFilter}
+                  onSetOneFilter={this.onSetOneFilter}
                 />
                 <TicketsList tickets={preparedTickets} />
               </>
