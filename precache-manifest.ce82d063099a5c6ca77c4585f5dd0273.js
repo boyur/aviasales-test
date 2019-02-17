@@ -16,23 +16,23 @@ self.__precacheManifest = [
     "url": "/aviasales-test/static/js/runtime~main.55ea3868.js"
   },
   {
-    "revision": "c521fa43a320518bf57f",
-    "url": "/aviasales-test/static/js/main.c521fa43.chunk.js"
+    "revision": "2169f9eae3792ae74c45",
+    "url": "/aviasales-test/static/js/main.2169f9ea.chunk.js"
   },
   {
     "revision": "5e0869c258331ab61ea2",
     "url": "/aviasales-test/static/js/2.5e0869c2.chunk.js"
   },
   {
-    "revision": "c521fa43a320518bf57f",
-    "url": "/aviasales-test/static/css/main.423a3db9.chunk.css"
+    "revision": "2169f9eae3792ae74c45",
+    "url": "/aviasales-test/static/css/main.07bedd08.chunk.css"
   },
   {
     "revision": "5e0869c258331ab61ea2",
     "url": "/aviasales-test/static/css/2.28992c60.chunk.css"
   },
   {
-    "revision": "7221de3928339de9d3e95fee1b84231b",
+    "revision": "76606265d73a9a91e90466fff22cfa3e",
     "url": "/aviasales-test/index.html"
   }
 ];
