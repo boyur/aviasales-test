@@ -8,7 +8,9 @@ import Ticket from './Ticket';
 const TicketsList = ({ tickets }) => (
   <div className="tickets-list">
     {
-      tickets.map((ticket, i) => <Ticket key={i} ticket={ticket} />)
+      tickets.length
+        ? tickets.map((ticket, i) => <Ticket key={i} ticket={ticket} />)
+        : <div className="tickets-list__no-tickets">Нет билетов</div>
     }
   </div>
 );

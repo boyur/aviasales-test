@@ -25,6 +25,7 @@ module.exports = {
     ],
     "react/no-array-index-key": 0,
     "camelcase": 0,
+    "jsx-a11y/label-has-for": 0
   },
   "settings": {
     'import/resolver': {

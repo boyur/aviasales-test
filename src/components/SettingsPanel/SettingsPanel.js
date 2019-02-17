@@ -2,16 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './SettingsPanel.scss';
 
-import CurrencySelector from './CurrencySelector';
+import CurrencyToggle from './CurrencyToggle';
+import Filter from './Filter';
 
 const SettingsPanel = (props) => {
-  const { currency, handleChangeCurrency } = props;
+  const {
+    currency,
+    filter,
+    handleChangeCurrency,
+    handleChangeFilter,
+  } = props;
+
   return (
     <div className="settings-panel">
       <div className="settings-panel__container">
-        <CurrencySelector
+        <div className="settings-panel__label">
+          ВАЛЮТА
+        </div>
+        <CurrencyToggle
           currency={currency}
           handleChangeCurrency={handleChangeCurrency}
+        />
+        <div className="settings-panel__label">
+          КОЛИЧЕСТВО ПЕРЕСАДОК
+        </div>
+        <Filter
+          filter={filter}
+          handleChangeFilter={handleChangeFilter}
         />
       </div>
     </div>
@@ -20,7 +37,9 @@ const SettingsPanel = (props) => {
 
 SettingsPanel.propTypes = {
   currency: PropTypes.string.isRequired,
+  filter: PropTypes.arrayOf(PropTypes.number).isRequired,
   handleChangeCurrency: PropTypes.func.isRequired,
+  handleChangeFilter: PropTypes.func.isRequired,
 };
 
 export default SettingsPanel;

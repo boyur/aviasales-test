@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import urls from 'configs/urls';
 import { formatPrice } from 'utils/currencies';
 import './App.scss';
@@ -7,11 +7,12 @@ import Header from 'components/Header';
 import SettingsPanel from 'components/SettingsPanel';
 import TicketsList from 'components/TicketsList';
 
-class App extends PureComponent {
+class App extends Component {
   state = {
     tickets: null,
     exchangeRates: null,
     currency: 'RUB',
+    filter: [0, 1, 2],
   };
 
   componentDidMount() {
@@ -40,13 +41,21 @@ class App extends PureComponent {
     this.setState({ currency });
   };
 
-  render() {
-    const { tickets, currency, exchangeRates } = this.state;
+  handleChangeFilter = (filter) => {
+    this.setState({ filter });
+  };
 
-    const convertedTickets = tickets && tickets.map(item => ({
-      ...item,
-      price: formatPrice(item.price, currency, exchangeRates),
-    }));
+  render() {
+    const {
+      tickets, filter, currency, exchangeRates,
+    } = this.state;
+
+    const preparedTickets = tickets && tickets
+      .filter(item => filter.includes(item.stops))
+      .map(item => ({
+        ...item,
+        price: formatPrice(item.price, currency, exchangeRates),
+      }));
 
     return (
       <>
@@ -57,9 +66,11 @@ class App extends PureComponent {
               <>
                 <SettingsPanel
                   currency={currency}
+                  filter={filter}
                   handleChangeCurrency={this.handleChangeCurrency}
+                  handleChangeFilter={this.handleChangeFilter}
                 />
-                <TicketsList tickets={convertedTickets} />
+                <TicketsList tickets={preparedTickets} />
               </>
             ) : 'Loading...'
           }
