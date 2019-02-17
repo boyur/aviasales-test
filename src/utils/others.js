@@ -5,8 +5,11 @@ export const declOfNum = (number, titles) => {
   return titles[(number > 4 && number < 20) ? 2 : cases[(number < 5) ? number : 5]];
 };
 
-export const formatDate = (date) => {
+export const formatDate = (value) => {
   const { months, daysOfWeek } = dateConfig;
+  const [rawDay, rawMonth, rawYear] = value.split('.');
+  const date = new Date(`${rawDay}/${rawMonth}/20${rawYear}`);
+
   const month = date.getMonth();
   const dayOfWeak = date.getDay();
   const day = date.getDate();

@@ -19,7 +19,7 @@ const MainSection = (props) => {
           {`${origin}, ${origin_name}`}
         </div>
         <div className="route__date">
-          {formatDate(new Date(departure_date))}
+          {formatDate(departure_date)}
         </div>
       </div>
       <div className="route__destination">
@@ -27,7 +27,7 @@ const MainSection = (props) => {
           {`${destination_name}, ${destination}`}
         </div>
         <div className="route__date">
-          {formatDate(new Date(arrival_date))}
+          {formatDate(arrival_date)}
         </div>
       </div>
     </div>
