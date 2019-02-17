@@ -42,7 +42,8 @@ class Filter extends Component {
         />
         {
           filterConfig.map(({ id, label }) => {
-            const isChecked = filter.includes(parseInt(id, 10));
+            const isChecked = filter
+              .findIndex((item) => item === parseInt(id, 10)) !== -1;
 
             return (
               <CheckBox

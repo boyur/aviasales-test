@@ -56,7 +56,7 @@ class App extends Component {
     } = this.state;
 
     const preparedTickets = tickets && tickets
-      .filter(item => filter.includes(item.stops))
+      .filter(ticket => filter.findIndex(item => item === ticket.stops) !== -1)
       .map(item => ({
         ...item,
         price: formatPrice(item.price, currency, exchangeRates),
