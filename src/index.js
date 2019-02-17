@@ -1,5 +1,6 @@
 // polyfill for IE
 import 'react-app-polyfill/ie11';
+import 'array-findindex-polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

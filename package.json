@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "array-findindex-polyfill": "^0.1.0",
     "node-sass": "4.11.0",
     "normalize.css": "8.0.1",
     "prop-types": "15.7.2",
