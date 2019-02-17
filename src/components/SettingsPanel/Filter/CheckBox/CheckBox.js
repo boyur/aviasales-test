@@ -8,8 +8,13 @@ const CheckBox = (props) => {
     id,
     isChecked,
     onChange,
+    handleChangeFilter,
     label,
   } = props;
+
+  const onClickOnlyButton = () => {
+    handleChangeFilter([parseInt(id, 10)]);
+  };
 
   return (
     <div className="checkbox">
@@ -25,6 +30,16 @@ const CheckBox = (props) => {
       >
         {label}
       </label>
+      {
+        id !== 'all' && (
+          <div
+            className="checkbox__only"
+            onClick={onClickOnlyButton}
+          >
+            ТОЛЬКО
+          </div>
+        )
+      }
     </div>
   );
 };

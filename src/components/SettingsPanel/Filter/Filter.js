@@ -45,6 +45,7 @@ const Filter = ({ filter, handleChangeFilter }) => {
               key={id}
               label={label}
               onChange={onChange}
+              handleChangeFilter={handleChangeFilter}
               isChecked={isChecked}
             />
           );
