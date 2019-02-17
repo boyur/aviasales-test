@@ -28,7 +28,7 @@ class Filter extends Component {
   };
 
   render() {
-    const { filter, onSetOneFilter } = this.props;
+    const { filter, setOneFilter } = this.props;
     const isAll = filter.length === filterConfig.length;
 
     return (
@@ -37,7 +37,6 @@ class Filter extends Component {
           id="all"
           label="Все"
           onChange={this.onChange}
-          onSetOneFilter={onSetOneFilter}
           isChecked={isAll}
         />
         {
@@ -51,7 +50,7 @@ class Filter extends Component {
                 key={id}
                 label={label}
                 onChange={this.onChange}
-                onSetOneFilter={onSetOneFilter}
+                setOneFilter={setOneFilter}
                 isChecked={isChecked}
               />
             );
@@ -65,7 +64,7 @@ class Filter extends Component {
 Filter.propTypes = {
   filter: PropTypes.arrayOf(PropTypes.number).isRequired,
   handleChangeFilter: PropTypes.func.isRequired,
-  onSetOneFilter: PropTypes.func.isRequired,
+  setOneFilter: PropTypes.func.isRequired,
 };
 
 export default Filter;

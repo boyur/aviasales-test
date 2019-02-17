@@ -8,7 +8,7 @@ const CheckBox = (props) => {
     id,
     isChecked,
     onChange,
-    onSetOneFilter,
+    setOneFilter,
     label,
   } = props;
 
@@ -31,7 +31,7 @@ const CheckBox = (props) => {
           <button
             id={id}
             className="checkbox__only"
-            onClick={onSetOneFilter}
+            onClick={setOneFilter}
             type="button"
           >
             ТОЛЬКО
@@ -46,7 +46,7 @@ CheckBox.propTypes = {
   id: PropTypes.string.isRequired,
   isChecked: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
-  onSetOneFilter: PropTypes.func,
+  setOneFilter: PropTypes.func,
   label: PropTypes.string.isRequired,
 };
 
