@@ -2,6 +2,12 @@
   display: flex;
   max-width: 818px;
   margin: auto;
+
+  @media (max-width: 860px) {
+    max-width: 565px;
+    padding: 0 40px;
+    flex-direction: column;
+  }
 }
 
 .loading {

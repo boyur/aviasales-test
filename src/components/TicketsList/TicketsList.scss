@@ -1,5 +1,12 @@
 .tickets-list {
-  width: 100%;
+  width: 565px;
+  margin: auto;
+
+  @media (max-width: 860px) {
+    max-width: 565px;
+    width: auto;
+    margin: 0;
+  }
 }
 
 .tickets-list__no-tickets {
