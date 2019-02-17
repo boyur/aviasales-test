@@ -32,12 +32,13 @@ const CheckBox = (props) => {
       </label>
       {
         id !== 'all' && (
-          <div
+          <button
             className="checkbox__only"
             onClick={onClickOnlyButton}
+            type="button"
           >
             ТОЛЬКО
-          </div>
+          </button>
         )
       }
     </div>
@@ -48,6 +49,7 @@ CheckBox.propTypes = {
   id: PropTypes.string.isRequired,
   isChecked: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
+  handleChangeFilter: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
 };
 
