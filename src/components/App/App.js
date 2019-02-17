@@ -72,7 +72,9 @@ class App extends Component {
                 />
                 <TicketsList tickets={preparedTickets} />
               </>
-            ) : 'Loading...'
+            ) : (
+              <div className="loading">Loading...</div>
+            )
           }
         </div>
       </>
