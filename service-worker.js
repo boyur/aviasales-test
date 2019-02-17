@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/aviasales-test/precache-manifest.f3c6e95d9f2873aa014a315388eab40d.js"
+  "/aviasales-test/precache-manifest.470c84687044882b13bc1ba0ac6d2583.js"
 );
 
 workbox.clientsClaim();
