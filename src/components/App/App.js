@@ -46,7 +46,6 @@ class App extends Component {
   };
 
   onSetOneFilter = (e) => {
-    console.log(e);
     const { id } = e.target;
     this.setState({ filter: [parseInt(id, 10)] });
   };
