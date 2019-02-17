@@ -1,17 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { declOfNum } from 'utils/others';
 
 import airplane from 'assets/svg/airplane.svg';
 
+const words = ['пересадка', 'пересадки', 'пересадок'];
+
 const TimeSection = (props) => {
   const { arrival_time, departure_time, stops } = props;
+
+  const pathText = stops ? `${stops} ${declOfNum(stops, words)}` : null;
+
   return (
     <div className="route__time-section">
       <div className="route__time">
         {departure_time}
       </div>
       <div className="route__path">
-        {stops ? `${stops} пересадки` : null}
+        {pathText}
         <img
           className="route__path-airplane"
           src={airplane}

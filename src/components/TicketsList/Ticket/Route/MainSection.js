@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { formatDate } from 'utils/others';
 
 const MainSection = (props) => {
   const {
@@ -18,7 +19,7 @@ const MainSection = (props) => {
           {`${origin}, ${origin_name}`}
         </div>
         <div className="route__date">
-          {departure_date}
+          {formatDate(new Date(departure_date))}
         </div>
       </div>
       <div className="route__destination">
@@ -26,7 +27,7 @@ const MainSection = (props) => {
           {`${destination_name}, ${destination}`}
         </div>
         <div className="route__date">
-          {arrival_date}
+          {formatDate(new Date(arrival_date))}
         </div>
       </div>
     </div>
