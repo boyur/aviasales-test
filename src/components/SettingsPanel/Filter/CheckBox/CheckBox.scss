@@ -77,4 +77,17 @@
     display: inline-block;
     width: 50%;
   }
+
+  @media (max-width: 620px) {
+    font-size: 10px;
+    height: 20px;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    .checkbox__only {
+      display: none;
+    }
+  }
 }

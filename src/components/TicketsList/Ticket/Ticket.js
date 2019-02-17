@@ -5,6 +5,8 @@ import carriersConfig from 'configs/carriers';
 import './Ticket.scss';
 
 import BuyButton from './BuyButton';
+import BuyButtonMobile from './BuyButtonMobile';
+
 import Route from './Route';
 
 const Ticket = ({ ticket }) => {
@@ -23,6 +25,7 @@ const Ticket = ({ ticket }) => {
       <div className="ticket__right-column">
         <Route {...route} />
       </div>
+      <BuyButtonMobile price={price} />
     </div>
   );
 };

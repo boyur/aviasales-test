@@ -7,23 +7,33 @@
   width: 100%;
   justify-content: space-between;
   margin-bottom: 10px;
+
+  @media (max-width: 620px) {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
 }
 
 .route__time {
   font-size: 32px;
   line-height: 26px;
   color: #4a4a4a;
+
+  @media (max-width: 620px) {
+    font-size: 22px;
+    line-height: 18px;
+  }
 }
 
 .route__path {
   position: relative;
-  width: 110px;
+  width: 100%;
   height: 18px;
   font-size: 10px;
   color: #8b9497;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 2px;
+  margin: 2px 20px 0 20px;
 
   &::after {
     position: absolute;

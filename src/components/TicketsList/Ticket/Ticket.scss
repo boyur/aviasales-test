@@ -8,6 +8,12 @@
   box-shadow: 0 1px 4px 0 rgba(91, 137, 164, 0.25);
   background-color: #fff;
   box-sizing: border-box;
+
+  @media (max-width: 620px) {
+    flex-direction: column;
+    height: initial;
+    padding-bottom: 10px;
+  }
 }
 
 .ticket__left-column {
@@ -16,6 +22,10 @@
   text-align: center;
   border-right: 1px solid #f3f7fa;
   box-sizing: border-box;
+
+  @media (max-width: 620px) {
+    display: none;
+  }
 }
 
 .ticket__right-column {
@@ -23,6 +33,11 @@
   max-width: 365px;
   padding: 25px;
   box-sizing: border-box;
+
+  @media (max-width: 620px) {
+    max-width: inherit;
+    padding: 15px;
+  }
 }
 
 .ticket__carrier-img {

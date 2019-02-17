@@ -58,9 +58,9 @@ class App extends Component {
       }));
 
     return (
-      <>
+      <div className="layout">
         <Header />
-        <div className="layout">
+        <div className="main">
           {
             tickets ? (
               <>
@@ -77,7 +77,7 @@ class App extends Component {
             )
           }
         </div>
-      </>
+      </div>
     );
   }
 }

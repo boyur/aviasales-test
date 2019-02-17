@@ -7,6 +7,11 @@
     width: auto;
     margin: 0;
   }
+
+  @media (max-width: 620px) {
+    max-width: initial;
+    width: 100%;
+  }
 }
 
 .tickets-list__no-tickets {
