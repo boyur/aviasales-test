@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import urls from 'configs/urls';
-import { formatPrice } from 'utils/currencies';
+import { formatPrice, getFiltredTickets } from 'utils';
 import './App.scss';
 
 import Header from 'components/Header';
 import SettingsPanel from 'components/SettingsPanel';
 import TicketsList from 'components/TicketsList';
 
-class App extends Component {
+class App extends PureComponent {
   state = {
     tickets: null,
     exchangeRates: null,
@@ -20,9 +20,10 @@ class App extends Component {
       .then(response => response.json())
       .then(({ tickets }) => {
         const sortedTickets = tickets.sort((a, b) => a.price - b.price);
+        const formattedTickets = sortedTickets.map(item => ({ ...item, ...formatPrice(item.price) }));
 
         this.setState({
-          tickets: sortedTickets,
+          tickets: formattedTickets,
         });
       })
       .catch(error => console.log(error.message));
@@ -38,7 +39,7 @@ class App extends Component {
   }
 
   handleChangeCurrency = (currency) => {
-    this.setState({ currency });
+    this.setState( { currency });
   };
 
   handleChangeFilter = (filter) => {
@@ -51,37 +52,25 @@ class App extends Component {
   };
 
   render() {
-    const {
-      tickets, filter, currency, exchangeRates,
-    } = this.state;
+    const { filter, currency } = this.state;
 
-    const preparedTickets = tickets && tickets
-      .filter(ticket => filter.findIndex(item => item === ticket.stops) !== -1)
-      .map(item => ({
-        ...item,
-        price: formatPrice(item.price, currency, exchangeRates),
-      }));
+    const tickets = getFiltredTickets(this.state.tickets, filter);
 
     return (
       <div className="layout">
         <Header />
         <div className="main">
-          {
-            tickets ? (
-              <>
-                <SettingsPanel
-                  currency={currency}
-                  filter={filter}
-                  handleChangeCurrency={this.handleChangeCurrency}
-                  handleChangeFilter={this.handleChangeFilter}
-                  setOneFilter={this.setOneFilter}
-                />
-                <TicketsList tickets={preparedTickets} />
-              </>
-            ) : (
-              <div className="loading">Loading...</div>
-            )
-          }
+          <SettingsPanel
+            currency={currency}
+            filter={filter}
+            handleChangeCurrency={this.handleChangeCurrency}
+            handleChangeFilter={this.handleChangeFilter}
+            setOneFilter={this.setOneFilter}
+          />
+          <TicketsList
+            tickets={tickets}
+            currency={currency}
+          />
         </div>
       </div>
     );

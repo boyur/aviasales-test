@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import './SettingsPanel.scss';
 
 import CurrencyToggle from './CurrencyToggle';
 import Filter from './Filter';
 
-const SettingsPanel = (props) => {
+const SettingsPanel = memo((props) => {
   const {
     currency,
     filter,
@@ -35,7 +35,7 @@ const SettingsPanel = (props) => {
       </div>
     </div>
   );
-};
+});
 
 SettingsPanel.propTypes = {
   currency: PropTypes.string.isRequired,

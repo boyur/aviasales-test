@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { formatDate } from 'utils/others';
+import { formatDate } from 'utils';
 
 const MainSection = (props) => {
   const {

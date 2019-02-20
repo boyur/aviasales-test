@@ -9,8 +9,8 @@ import BuyButtonMobile from './BuyButtonMobile';
 
 import Route from './Route';
 
-const Ticket = ({ ticket }) => {
-  const { price, carrier, ...route } = ticket;
+const Ticket = (props) => {
+  const { price, carrier, ...route } = props;
 
   return (
     <div className="ticket">
@@ -31,19 +31,17 @@ const Ticket = ({ ticket }) => {
 };
 
 Ticket.propTypes = {
-  ticket: PropTypes.shape({
-    origin: PropTypes.string,
-    origin_name: PropTypes.string,
-    destination: PropTypes.string,
-    destination_name: PropTypes.string,
-    departure_date: PropTypes.string,
-    departure_time: PropTypes.string,
-    arrival_date: PropTypes.string,
-    arrival_time: PropTypes.string,
-    carrier: PropTypes.string,
-    stops: PropTypes.number,
-    price: PropTypes.string,
-  }).isRequired,
+  origin: PropTypes.string.isRequired,
+  origin_name: PropTypes.string.isRequired,
+  destination: PropTypes.string.isRequired,
+  destination_name: PropTypes.string.isRequired,
+  departure_date: PropTypes.string.isRequired,
+  departure_time: PropTypes.string.isRequired,
+  arrival_date: PropTypes.string.isRequired,
+  arrival_time: PropTypes.string.isRequired,
+  carrier: PropTypes.string.isRequired,
+  stops: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
 };
 
 export default Ticket;

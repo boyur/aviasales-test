@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import './Header.scss';
-import logo from 'assets/svg/Logo.svg';
+import { ReactComponent as Logo } from './Logo.svg';
 
-const Header = () => (
+const Header = memo(() => (
   <div className="header">
-    <img className="header_logo" src={logo} alt="Logo" />
+    <Logo className="header_logo" style={{ height: 60 }} />
   </div>
-);
+));
 
 export default Header;

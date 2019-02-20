@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { declOfNum } from 'utils/others';
+import { declOfNum } from 'utils';
 
 import airplane from 'assets/svg/airplane.svg';
 
