@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import urls from 'configs/urls';
-import { formatPrice, getFiltredTickets } from 'utils';
+import { getFiltredTickets } from 'utils';
 import './App.scss';
 
 import Header from 'components/Header';
@@ -20,10 +20,9 @@ class App extends PureComponent {
       .then(response => response.json())
       .then(({ tickets }) => {
         const sortedTickets = tickets.sort((a, b) => a.price - b.price);
-        const formattedTickets = sortedTickets.map(item => ({ ...item, ...formatPrice(item.price) }));
 
         this.setState({
-          tickets: formattedTickets,
+          tickets: sortedTickets,
         });
       })
       .catch(error => console.log(error.message));
@@ -43,16 +42,17 @@ class App extends PureComponent {
   };
 
   handleChangeFilter = (filter) => {
-    this.setState({ filter });
+    this.setState({ filter: [...filter] });
   };
 
   setOneFilter = (e) => {
+    e.stopPropagation();
     const { id } = e.target;
     this.setState({ filter: [parseInt(id, 10)] });
   };
 
   render() {
-    const { filter, currency } = this.state;
+    const { filter, currency, exchangeRates } = this.state;
 
     const tickets = getFiltredTickets(this.state.tickets, filter);
 
@@ -70,6 +70,7 @@ class App extends PureComponent {
           <TicketsList
             tickets={tickets}
             currency={currency}
+            exchangeRates={exchangeRates}
           />
         </div>
       </div>

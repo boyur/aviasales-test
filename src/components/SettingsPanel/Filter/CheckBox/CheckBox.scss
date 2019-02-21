@@ -25,6 +25,7 @@
   color: #4a4a4a;
   padding: 7px 15px;
   box-sizing: border-box;
+  cursor: pointer;
 
   &:hover {
     background-color: #f1fcff;
@@ -39,6 +40,8 @@
   }
 
   label {
+    display: block;
+    width: 100%;
     cursor: pointer;
     user-select: none;
     position: relative;

@@ -9,6 +9,7 @@ class Filter extends Component {
   onChange = (e) => {
     const { filter, handleChangeFilter } = this.props;
     const { id } = e.target;
+
     if (id === 'all') {
       const isAll = filter.length === filterConfig.length;
       handleChangeFilter(isAll ? [] : [0, 1, 2, 3]);
@@ -41,8 +42,7 @@ class Filter extends Component {
         />
         {
           filterConfig.map(({ id, label }) => {
-            const isChecked = filter
-              .findIndex((item) => item === parseInt(id, 10)) !== -1;
+            const isChecked = filter.findIndex((item) => item === parseInt(id, 10)) !== -1;
 
             return (
               <CheckBox

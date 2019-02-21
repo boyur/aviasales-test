@@ -1,11 +1,12 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
+import { formatPrice } from 'utils';
 
 import './TicketsList.scss';
 
 import Ticket from './Ticket';
 
-const TicketsList = memo(({ tickets, currency }) => {
+const TicketsList = memo(({ tickets, currency, exchangeRates }) => {
   if (!tickets) {
     return <div className="tickets-list__no-tickets">Loading...</div>;
   }
@@ -20,7 +21,7 @@ const TicketsList = memo(({ tickets, currency }) => {
         <Ticket
           key={i}
           {...ticket}
-          price={ticket[currency]}
+          price={formatPrice(ticket.price, currency, exchangeRates)}
         />
       ))}
     </div>
@@ -29,11 +30,13 @@ const TicketsList = memo(({ tickets, currency }) => {
 
 TicketsList.propTypes = {
   tickets: PropTypes.arrayOf(PropTypes.object),
-  currency: PropTypes.string.isRequired
+  currency: PropTypes.string.isRequired,
+  exchangeRates: PropTypes.object
 };
 
 TicketsList.defaultProps = {
-  tickets: null
+  tickets: null,
+  exchangeRates: null
 };
 
 export default TicketsList;

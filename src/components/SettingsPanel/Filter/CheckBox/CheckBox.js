@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import './CheckBox.scss';
 import checkMark from 'assets/svg/checkMark.svg';
 
+const labelStyle = { backgroundImage: `url(${checkMark})` };
+
 const CheckBox = (props) => {
   const {
     id,
@@ -15,15 +17,12 @@ const CheckBox = (props) => {
   return (
     <div className="checkbox">
       <input
-        type="checkbox"
         id={id}
-        onChange={onChange}
+        type="checkbox"
         checked={isChecked}
+        onChange={onChange}
       />
-      <label
-        htmlFor={id}
-        style={{ backgroundImage: `url(${checkMark})` }}
-      >
+      <label htmlFor={id} style={labelStyle}>
         {label}
       </label>
       {
