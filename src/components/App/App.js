@@ -6,6 +6,7 @@ import './App.scss';
 import Header from 'components/Header';
 import SettingsPanel from 'components/SettingsPanel';
 import TicketsList from 'components/TicketsList';
+import filterConfig from "../../configs/filter";
 
 class App extends PureComponent {
   state = {
@@ -41,8 +42,25 @@ class App extends PureComponent {
     this.setState( { currency });
   };
 
-  handleChangeFilter = (filter) => {
-    this.setState({ filter: [...filter] });
+  handleChangeFilter = (e) => {
+    const { id } = e.target;
+    const { filter } = this.state;
+
+    if (id === 'all') {
+      const isAll = filter.length === filterConfig.length;
+      this.setState({ filter: isAll ? [] : [0, 1, 2, 3] });
+    } else {
+      const stops = parseInt(id, 10);
+      const index = filter.findIndex(item => item === stops);
+
+      if (index === -1) {
+        filter.push(stops);
+      } else {
+        filter.splice(index, 1);
+      }
+
+      this.setState({ filter: [...filter] });
+    }
   };
 
   setOneFilter = (e) => {

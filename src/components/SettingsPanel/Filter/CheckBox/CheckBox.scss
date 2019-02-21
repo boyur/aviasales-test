@@ -23,7 +23,6 @@
   height: 36px;
   font-size: 13px;
   color: #4a4a4a;
-  padding: 7px 15px;
   box-sizing: border-box;
   cursor: pointer;
 
@@ -46,6 +45,9 @@
     user-select: none;
     position: relative;
     background-size: 0;
+    padding: 0 15px;
+    box-sizing: border-box;
+    line-height: 36px;
   }
 
   input[type=checkbox] + label::before {
@@ -60,7 +62,7 @@
     border-radius: 3px;
     font-size: 20px;
     line-height: 22px;
-    margin: 0 10px 0 0;
+    margin: 0 10px 2px 0;
     height: 19px;
     width: 19px;
     text-align: center;

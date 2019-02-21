@@ -21,8 +21,8 @@ export const formatDate = memoize((dateString) => {
 
 export const getFiltredTickets = memoize((tickets, filter) =>
   tickets && tickets.filter(ticket =>
-  filter.findIndex(item => item === ticket.stops) !== -1
-  ));
+    filter.findIndex(item => item === ticket.stops) !== -1
+));
 
 export const formatPrice = (price, currency, exchangeRates) => {
   const regexp = /\B(?=(\d{3})+(?!\d))/g;
