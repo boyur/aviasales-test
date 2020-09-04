@@ -17,7 +17,7 @@
     "core-js": "2.6.5",
     "date-and-time": "^0.6.3",
     "fast-memoize": "^2.5.1",
-    "node-sass": "4.11.0",
+    "node-sass": "4.14.1",
     "normalize.css": "8.0.1",
     "prop-types": "15.7.2",
     "react": "16.8.2",
